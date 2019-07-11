@@ -268,7 +268,7 @@ class _LoginRegisterState extends State<LoginRegister> {
           }
         }
       } else {
-        setState(() {
+        _sheetController.setState(() {
           _autoValidate = true;
         });
       }
