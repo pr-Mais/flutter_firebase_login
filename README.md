@@ -1,16 +1,8 @@
-# flutter_firebase_login
+# A Flutter Login UI Using Firebase As Backend
+A simple usage of FirebaseAuth to login and register  users.
 
-A new Flutter project.
+# Usage
+Don't forget to add your firebase config files and follow instruction to add Firebase to your app.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# On Medium
+[Flutter Login & Registration Using Firebase](https://medium.com/@pr_mais/flutter-login-registration-using-firebase-1eaa7d077c24)
