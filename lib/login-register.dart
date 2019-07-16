@@ -30,12 +30,11 @@ class _LoginRegisterState extends State<LoginRegister> {
 
     //GO logo widget
     Widget logo() {
-      return Center(
-          child: Padding(
-        padding: EdgeInsets.only(top: 120),
+      return Padding(
+        padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.15),
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: 240,
+          height: 220,
           child: Stack(
             children: <Widget>[
               Positioned(
@@ -47,16 +46,13 @@ class _LoginRegisterState extends State<LoginRegister> {
                     width: 150,
                     height: 150,
                   ),
-                  alignment: Alignment.center,
                 ),
                 height: 154,
               )),
               Positioned(
                 child: Container(
                     height: 154,
-                    width: MediaQuery.of(context).size.width,
                     child: Align(
-                      alignment: Alignment.center,
                       child: Text(
                         "GO",
                         style: TextStyle(
@@ -68,20 +64,20 @@ class _LoginRegisterState extends State<LoginRegister> {
                     )),
               ),
               Positioned(
-                width: 60,
-                height: 60,
-                top: 140,
-                left: 260,
+                width: MediaQuery.of(context).size.width * 0.15,
+                height: MediaQuery.of(context).size.width * 0.15,
+                bottom: MediaQuery.of(context).size.height * 0.046,
+                right: MediaQuery.of(context).size.width * 0.22,
                 child: Container(
                   decoration: BoxDecoration(
                       shape: BoxShape.circle, color: Colors.white),
                 ),
               ),
               Positioned(
-                width: 30,
-                height: 30,
-                top: 200,
-                left: 230,
+                width: MediaQuery.of(context).size.width * 0.08,
+                height: MediaQuery.of(context).size.width * 0.08,
+                bottom: 0,
+                right: MediaQuery.of(context).size.width * 0.32,
                 child: Container(
                   decoration: BoxDecoration(
                       shape: BoxShape.circle, color: Colors.white),
@@ -90,7 +86,7 @@ class _LoginRegisterState extends State<LoginRegister> {
             ],
           ),
         ),
-      ));
+      );
     }
 
     //button widgets
@@ -268,7 +264,7 @@ class _LoginRegisterState extends State<LoginRegister> {
           }
         }
       } else {
-        _sheetController.setState(() {
+        setState(() {
           _autoValidate = true;
         });
       }
@@ -306,7 +302,6 @@ class _LoginRegisterState extends State<LoginRegister> {
                           child: IconButton(
                             onPressed: () {
                               Navigator.of(context).pop();
-
                             },
                             icon: Icon(
                               Icons.close,
@@ -375,9 +370,8 @@ class _LoginRegisterState extends State<LoginRegister> {
                               icon: Icon(Icons.lock),
                               obsecure: true,
                               onSaved: (input) => _password = input,
-                              validator: (input) => input.isEmpty
-                                  ? "*Required"
-                                  : null,
+                              validator: (input) =>
+                                  input.isEmpty ? "*Required" : null,
                               hint: "PASSWORD",
                             )),
                         SizedBox(
@@ -540,9 +534,8 @@ class _LoginRegisterState extends State<LoginRegister> {
                             icon: Icon(Icons.lock),
                             obsecure: true,
                             onSaved: (input) => _password = input,
-                            validator: (input) => input.isEmpty
-                                ? "*Required"
-                                : null,
+                            validator: (input) =>
+                                input.isEmpty ? "*Required" : null,
                             hint: "PASSWORD",
                           )),
                       Padding(
@@ -592,13 +585,17 @@ class _LoginRegisterState extends State<LoginRegister> {
         body: Column(
           children: <Widget>[
             logo(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
             Padding(
               child: Container(
                 child: filledButton("LOGIN", primaryColor, Colors.white,
                     Colors.white, primaryColor, loginSheet),
                 height: 50,
               ),
-              padding: EdgeInsets.only(top: 80, left: 20, right: 20),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.05,
+                  left: 20,
+                  right: 20),
             ),
             Padding(
               child: Container(
